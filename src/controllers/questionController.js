@@ -1,4 +1,4 @@
-const GetTheQuestions = require('../services/questions-service');
+const { compileFeedbackForm } = require('../services/questions-service');
 
 const QuestionController = (req, res) => {
  

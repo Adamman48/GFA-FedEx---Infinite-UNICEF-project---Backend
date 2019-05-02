@@ -1,6 +1,6 @@
-const { Question } = require('../models/feedback-models');
+const { Question, Answer } = require('../models/feedback-models');
 
-const GetTheQuestions = () => new Promise((resolve, reject) => {
+const getQuestions = () => new Promise((resolve, reject) => {
   Question.find({}, (err, result) => {
     if (err) {
       err = 'Database error'
@@ -10,4 +10,19 @@ const GetTheQuestions = () => new Promise((resolve, reject) => {
   })
 })
 
-module.exports = GetTheQuestions;
+const getAnswers = (questionId) => new Promise((resolve, reject) => {
+  Answer.find({questionId: questionId}, (error, result) => {
+    error ? reject(new Error("Database error")) :
+      resolve(result);
+  });
+});
+
+const compileFeedbackForm = () => {
+  
+  getQuestions().then(result => result.map(value => getAnswers(value)))
+
+};
+
+module.exports = {
+  compileFeedbackForm,
+};
