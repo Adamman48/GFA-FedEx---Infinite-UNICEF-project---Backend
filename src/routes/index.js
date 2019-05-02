@@ -4,7 +4,7 @@ const router = express.Router();
 const helloWorldController = require('../controllers/hello-world');
 const { addQuestion, addAnswer } = require('../controllers/dummy');
 const { updateAnswerCounter } = require('../controllers/post-answer');
-const QuestionController = require('../controllers/questionController');
+const { QuestionController } = require('../controllers/questionController');
 
 router.get('/helloworld', helloWorldController.helloWorldController);
 router.post('/add', addQuestion); // for testing

@@ -8,7 +8,7 @@ const addQuestion = (req, res) => {
 };
 
 const addAnswer = async (req, res) => {
-  await initAnswer(req.body, "5ccb5875abe8611204747931").save()
+  await initAnswer(req.body, "5ccb5f9f40ef870d98e8bcfe").save()
   res.end()
 }
 

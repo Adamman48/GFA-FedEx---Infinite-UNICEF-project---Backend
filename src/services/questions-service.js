@@ -17,10 +17,10 @@ const getAnswers = (questionId) => new Promise((resolve, reject) => {
   });
 });
 
-const compileFeedbackForm = () => {
-  
-  getQuestions().then(result => result.map(value => getAnswers(value)))
-
+const compileFeedbackForm = async () => {
+  let answersArray = await getQuestions().then(result => result.map(value => getAnswers(value).then(result => answersArray.push(result))));
+  let questionsArray = await getQuestions().then(result => result);
+  return Object.assign({}, {questions: questionsArray, answers: answersArray})
 };
 
 module.exports = {
