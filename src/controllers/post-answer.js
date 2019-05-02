@@ -1,7 +1,7 @@
-const { updateAnswers } = require('../services/post-answer');
+const { updateStatistics } = require('../services/post-answer');
 
 const updateAnswerCounter = async (req, res) => {
-  await updateAnswers(req.body.answers);
+  await updateStatistics(req.body.questionId, req.body.answerId);
   res.end();
 };
 
