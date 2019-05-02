@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
-const answers = new mongoose.Schema({
+const answerSchema = new mongoose.Schema({
   answerText:String,
   answerCounter:Number,
   answersSerialNumber:Number
 })
 
-const questions = new mongoose.Schema({
+const questionSchema = new mongoose.Schema({
   questionText: String,
   questionSerialNumber: Number,
-  answers: [answers]
+  answers: [answerSchema]
 });
 
-module.exports = {questions};
+module.exports = {questionSchema};
