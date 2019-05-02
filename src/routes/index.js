@@ -11,5 +11,4 @@ router.post('/add', addQuestion);
 router.get('/load', QuestionController);
 
 
-
 module.exports = router;
