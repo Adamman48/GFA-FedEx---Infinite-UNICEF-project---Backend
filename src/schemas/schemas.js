@@ -12,4 +12,7 @@ const questionSchema = new mongoose.Schema({
   answers: [answerSchema]
 });
 
-module.exports = {questionSchema};
+module.exports = {
+  questionSchema,
+  answerSchema,
+};
