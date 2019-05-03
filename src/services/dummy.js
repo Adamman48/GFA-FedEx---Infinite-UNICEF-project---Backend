@@ -7,12 +7,12 @@ const initQuestion = (requestBody) =>
     questionSerialNumber: requestBody.qNum,
   });
 
-const initAnswer = (requestBody, questionId) =>
+const initAnswer = (requestBody) =>
   new Answer({
     answerText: requestBody.aText,
     answerCount: 0,
     answersSerialNumber: requestBody.aNum,
-    questionId: questionId,
+    questionId: requestBody.questionId,
   });
 
 module.exports = {
