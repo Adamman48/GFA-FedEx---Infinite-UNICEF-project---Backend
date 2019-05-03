@@ -1,10 +1,10 @@
 const { compileFeedbackForm } = require('../services/questions-service');
 
-const QuestionController = (req, res) => {
- 
-  GetTheQuestions()
-    .then((result) =>  res.json(result))
-    .catch((err) => console.info(err))
+const QuestionController = async (req, res) => {
+  let response = await compileFeedbackForm();
+  res.send(response);
 }
 
-module.exports = QuestionController;
+module.exports = {
+  QuestionController,
+}
